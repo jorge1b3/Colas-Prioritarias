@@ -36,7 +36,7 @@ Paciente Cola::dequeue(){
 std::string Cola::toString(){
     if(!head) throw std::out_of_range("No hay personas en la cola\n");
     Nodo* nodo = head;
-    std::string lista{"Gravedad\tEdad\tNombre\t\tSintoma"};
+    std::string lista{"Gravedad\tEdad\tNombre\t\tSintoma\n"};
     while(nodo){
         lista+= nodo->paciente.toString();
         nodo = nodo->back;
