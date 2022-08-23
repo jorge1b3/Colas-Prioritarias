@@ -7,7 +7,6 @@ namespace std{
     private:
         Nodo* head;
         Nodo* tail;
-        Paciente& get(int position);
     public:
         void enqueue(Paciente paciente);
         Paciente dequeue();

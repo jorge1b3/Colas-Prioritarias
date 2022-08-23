@@ -4,9 +4,6 @@
 #include <stdexcept>
 using std::Cola;
 using std::Paciente;
-Paciente& Cola::get(int position){
-    return head->paciente;
-}
 
 void Cola::enqueue(Paciente paciente){
     if(!head){
