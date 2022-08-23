@@ -4,17 +4,17 @@
 using std::Paciente;
 
 bool Paciente::mostPriority(Paciente p){
-    if(p.gravedad < this->gravedad) return true;
-    if(p.edad<=12 && this->edad>12) return true;
-    if(p.edad>=65 && this->edad<65) return true;
-    return false;
+    if(p.gravedad < this->gravedad) return false;
+    if(p.edad<=12 && this->edad>12) return false;
+    if(p.edad>=65 && this->edad<65) return false;
+    return true;
 }
 
 std::string Paciente::toString(){
     std::string paciente{};
     paciente += to_string(gravedad) + '\t';
     paciente += to_string(edad) + '\t';
-    paciente += nombre + '\t';
+    paciente += nombre + "\t\t";
     paciente += sintomas + '\n';
     return paciente;
 }
