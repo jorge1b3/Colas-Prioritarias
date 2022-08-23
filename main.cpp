@@ -57,6 +57,7 @@ int main(){
             case 4:{
                     std::cout<<"Hasta Luego"<<std::endl;
                     salir = true;
+                    pause();
                     break;
                    }
             default:{
