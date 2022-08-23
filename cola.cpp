@@ -25,16 +25,16 @@ void Cola::enqueue(Paciente paciente){
 }
 
 Paciente Cola::dequeue(){
-    if(!head) throw std::out_of_range("No hay personas en la cola\n");
+    if(!head) throw std::out_of_range("La cola esta vacia\n");
     Nodo* next {head};
     head = head->back;
-   Paciente valReturn = next->paciente;
+    Paciente valReturn = next->paciente;
     delete next;
     return valReturn;
 }
 
 std::string Cola::toString(){
-    if(!head) throw std::out_of_range("No hay personas en la cola\n");
+    if(!head) throw std::out_of_range("La cola esta vacia\n");
     Nodo* nodo = head;
     std::string lista{"Gravedad\tEdad\tNombre\t\tSintoma\n"};
     while(nodo){
