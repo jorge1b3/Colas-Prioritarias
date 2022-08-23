@@ -1,6 +1,7 @@
 #include "cola.h"
 #include "nodo.h"
 #include <string>
+#include <stdexcept>
 using std::Cola;
 using std::Paciente;
 Paciente& Cola::get(int position){
@@ -11,20 +12,20 @@ void Cola::enqueue(Paciente paciente){
     if(!head){
         tail = new Nodo(paciente,nullptr);
         head = tail;
+        return;
     }
-    Nodo* nodo {head};
-    Nodo* next {nullptr};
-    while(!paciente.mostPriority(nodo->paciente)){
-        next = nodo;
-        nodo = nodo->back;
+    Nodo* nodo {nullptr};
+    Nodo* back {head};
+    while(back){
+        if(paciente.mostPriority(back->paciente)) break;
+        nodo = back;
+        back = back->back;  
     }
-    nodo = new Nodo(paciente,nodo->back);
-    if(!next) return;
-    next->back = nodo;
+    nodo->back = new Nodo(paciente,back);
 }
 
 Paciente Cola::dequeue(){
-    //if(!head) return null;
+    if(!head) throw std::out_of_range("No hay personas en la cola\n");
     Nodo* next {head};
     head = head->back;
    Paciente valReturn = next->paciente;
@@ -33,8 +34,9 @@ Paciente Cola::dequeue(){
 }
 
 std::string Cola::toString(){
+    if(!head) throw std::out_of_range("No hay personas en la cola\n");
     Nodo* nodo = head;
-    std::string lista{};
+    std::string lista{"Gravedad\tEdad\tNombre\t\tSintoma"};
     while(nodo){
         lista+= nodo->paciente.toString();
         nodo = nodo->back;
