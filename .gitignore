@@ -2,3 +2,7 @@
 .vscode/*
 *.out
 main
+CMakeCache.txt
+CMakeFiles/
+Makefile
+cmake_install.cmake
