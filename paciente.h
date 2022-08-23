@@ -8,7 +8,7 @@ namespace std{
         std::string sintomas;
         int edad;
         int gravedad;
-        bool mostPriority(Paciente pacienteAComparar);
+        bool higherPriority(Paciente pacienteAComparar);
         std::string toString();
         Paciente(std::string nombre,std::string sintomas,int edad,int gravedad);
         Paciente();

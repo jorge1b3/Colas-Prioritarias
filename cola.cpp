@@ -17,7 +17,7 @@ void Cola::enqueue(Paciente paciente){
     Nodo* nodo {nullptr};
     Nodo* back {head};
     while(back){
-        if(paciente.mostPriority(back->paciente)) break;
+        if(paciente.higherPriority(back->paciente)) break;
         nodo = back;
         back = back->back;  
     }

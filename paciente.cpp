@@ -3,7 +3,7 @@
 
 using std::Paciente;
 
-bool Paciente::mostPriority(Paciente p){
+bool Paciente::higherPriority(Paciente p){
     if(p.gravedad < this->gravedad) return false;
     if(p.edad<=12 && this->edad>12) return false;
     if(p.edad>=65 && this->edad<65) return false;
