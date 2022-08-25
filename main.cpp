@@ -83,12 +83,13 @@ std::Paciente ingresarPaciente(){
     using std::Paciente;
     Paciente p{};
     std::cout<<"El nombre del paciente: ";
-    std::cin>>p.nombre;
+    std::getline(std::cin>>std::ws,p.nombre);
     std::cout<<"Ingrese los síntomas del paciente: ";
-    std::cin>>p.sintomas;
+    std::getline(std::cin>>std::ws,p.nombre);
     std::cout<<"Ingrese la edad del paciente: ";
     std::cin>>p.edad;
     std::cout<<"Ingrese la gravedad del paciente, en una escala del 1 al 5: ";
+    std::cin.clear();
     std::cin>>p.gravedad;
     return p;
 }
