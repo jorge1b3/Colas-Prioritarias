@@ -8,10 +8,10 @@ void clear_screen();
 
 void pause();
 
-std::Paciente ingresarPaciente();
+cola::Paciente ingresarPaciente();
 
 int main(){
-    using std::Cola;
+    using cola::Cola;
     bool salir {false};
     Cola cola{};
     while(!salir){
@@ -36,7 +36,7 @@ int main(){
                     try{
                         std::cout<<cola.dequeue().toString();
                     }
-                    catch(std::out_of_range e)
+                    catch(std::out_of_range& e)
                     {
                         std::cout<<e.what();
                     }
@@ -47,7 +47,7 @@ int main(){
                     try{
                         std::cout<<cola.toString();
                     }
-                    catch(std::out_of_range e)
+                    catch(std::out_of_range& e)
                     {
                         std::cout<<e.what();
                     }
@@ -79,13 +79,13 @@ void pause(){
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     std::cin.get();
 }
-std::Paciente ingresarPaciente(){
-    using std::Paciente;
+cola::Paciente ingresarPaciente(){
+    using cola::Paciente;
     Paciente p{};
     std::cout<<"El nombre del paciente: ";
     std::getline(std::cin>>std::ws,p.nombre);
     std::cout<<"Ingrese los síntomas del paciente: ";
-    std::getline(std::cin>>std::ws,p.nombre);
+    std::getline(std::cin>>std::ws,p.sintomas);
     std::cout<<"Ingrese la edad del paciente: ";
     std::cin>>p.edad;
     std::cout<<"Ingrese la gravedad del paciente, en una escala del 1 al 5: ";
