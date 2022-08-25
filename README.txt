@@ -1,4 +1,4 @@
-#Como compilar
+Como compilar
 
 Para sistemas tipo unix, con cmake y make instaladas
 
