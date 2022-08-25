@@ -6,3 +6,14 @@ CMakeCache.txt
 CMakeFiles/
 Makefile
 cmake_install.cmake
+.ninja*
+build.ninja
+Testing/
+Testing/*
+.cmake/
+.cmake/*
+.idea
+.idea/
+.idea/*
+.ninja_deps
+.ninja_log
