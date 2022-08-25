@@ -3,10 +3,10 @@
 using cola::Paciente;
 
 bool Paciente::higherPriority(const Paciente& p) const{
-    if(p.gravedad < this->gravedad) return false;
-    if(p.edad<=12 && this->edad>12) return false;
-    if(p.edad>=65 && this->edad<65) return false;
-    return true;
+    if(this->gravedad<p.gravedad) return true;
+    if(p.edad>12 && this->edad<=12) return  true;
+    if(this->edad>=65 && p.edad<65) return true;
+    return false;
 }
 
 std::string Paciente::toString() const{
