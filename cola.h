@@ -1,14 +1,14 @@
 #ifndef COLA_H
 #define COLA_H
 #include "nodo.h"
-namespace std{
-    using std::Nodo;
+namespace cola{
+    using cola::Nodo;
     class Cola{
     private:
         Nodo* head;
         Nodo* tail;
     public:
-        void enqueue(Paciente paciente);
+        void enqueue(const Paciente& paciente);
         Paciente dequeue();
         std::string toString();
         Cola();

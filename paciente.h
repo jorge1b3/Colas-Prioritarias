@@ -1,16 +1,15 @@
 #ifndef PACIENTE_H
 #define PACIENTE_H
 #include <string>
-namespace std{
+namespace cola{
     class Paciente{
         public:
         std::string nombre;
         std::string sintomas;
         int edad;
         int gravedad;
-        bool higherPriority(const Paciente& pacienteAComparar);
-        std::string toString();
-        Paciente(std::string nombre,std::string sintomas,int edad,int gravedad);
+        [[nodiscard]] bool higherPriority(const Paciente& pacienteAComparar) const;
+        [[nodiscard]] std::string toString() const;
         Paciente();
     };
 }

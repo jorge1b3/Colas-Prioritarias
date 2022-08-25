@@ -1,11 +1,10 @@
 #include "cola.h"
 #include "nodo.h"
-#include <string>
 #include <stdexcept>
-using std::Cola;
-using std::Paciente;
+using cola::Cola;
+using cola::Paciente;
 
-void Cola::enqueue(Paciente paciente){
+void Cola::enqueue(const Paciente& paciente){
     if(!head){
         tail = new Nodo(paciente,nullptr);
         head = tail;
@@ -42,7 +41,7 @@ std::string Cola::toString(){
 }
 
 Cola::Cola():
-    head(nullptr),tail(nullptr){}
+    head{nullptr},tail{}{}
 
 Cola::~Cola(){
     Nodo* next {head};
