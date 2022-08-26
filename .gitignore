@@ -19,3 +19,7 @@ Testing/*
 .ninja_log
 build/
 build/*
+cache/
+cache/*
+.cache/
+.cache/*
